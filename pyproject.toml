@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "todo"
+authors = [
+    {name = "Troy Gilmore", email = "troygilmore89@gmail.com"},
+]
+description = "My package description"
+readme = "README.rst"
+requires-python = ">=3.10"
+keywords = ["one", "two"]
+license = {text = "BSD-3-Clause"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+]
+dynamic = ["version"]
+
+#[project.optional-dependencies]
+dev = ["pytest>=6.0"]
+#pdf = ["ReportLab>=1.2", "RXP"]
+#rest = ["docutils>=0.3", "pack ==1.1, ==1.3"]
+
+#[project.scripts]
+#my-script = "my_package.module:function"
+
+# ... other project metadata fields as specified in:
+#     https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = ["-ra -q",
+    "--import-mode=importlib",
+    "--debug=pytest_debug.txt",
+]
+testpaths = [
+    "tests",
+]
+pythonpath = [
+  "src"
+]
